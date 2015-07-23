@@ -1,0 +1,6 @@
+{
+    "/index": {
+        "tpl": "tpl/main.tpl",
+        "action": "index/main.php"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "smarty": "./Smarty",
+    "default": {
+        "tplData": {
+            "passport": "https://passport.rdtest.baidu.com",
+            "feRoot": "http://172.20.132.118:8848",
+            "baseUrl": "http://172.20.132.118:8848",
+            "headerPath": "http://s1.bdstatic.com/r/www/cache/biz/ecom/onesite/20140327/site"
+        },
+        "extData": {}
+    }
+}
