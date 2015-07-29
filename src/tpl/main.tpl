@@ -2,33 +2,26 @@
 <html>
 <head>
     <title>water Fall</title>
-    <style type="text/css">
-        div{
-            width: 100px;
-            height: 100px;
-            padding: 20px;
-            border: 5px solid #eee;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="src/css/main.less"></link>
 </head>
 <body>
-    <div></div>
-    <input type="button" id="btn" value="获取数据"/>
+    <div class="container">
+        {%foreach $tplData.dataList as $item%}
+            <div class="block">
+                <img src="{%$item.imgUrl|escape:'html'%}"/>
+                <p class="des">{%$item.text|escape:'html'%}</p>
+            </div>
+        {%/foreach%}
+    </div>
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src='src/js/waterFall.js'></script>
     <script type="text/javascript">
         window.onload = function () {
-            $('#btn').click(function () {
-                $.ajax({
-                    type: 'GET',
-                    url: '{%$tplData.mpAjaxUrl|escape:javascript%}',
-                    dataType: 'json',
-                    success: function (data) {
-                        console.log(data);
-                        var img = $('<img src="' + data.data.tplData.imgPath + '"/>');
-                        $('div').append(img);
-                    }
-                });
-            })
+            $('.container').waterFall({
+                container: 'container',
+                child: 'block',
+                width: 298
+            });
         }
     </script>
 </body>
