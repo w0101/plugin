@@ -1,0 +1,11 @@
+{%function list%}
+{%strip%}
+    {%foreach $dataList as $item%}
+        <div class="block need-render">
+            <img src="{%$item.imgUrl|escape:'html'%}"/>
+            <p class="des">{%$item.text|escape:'html'%}</p>
+        </div>
+    {%/foreach%}
+{%/strip%}
+{%/function%}
+{%list dataList=$tplData.dataList%}

@@ -39,6 +39,15 @@ function requestHandler(req) {
 exports.getLocations = function () {
     return [
         {
+            location: /\.tpl\.js($|\?)/,
+            handler: [
+                smarty4js({
+                    leftDelimiter: '{%',
+                    rightDelimiter: '%}'
+                })
+            ]
+        },
+        {
             location: /^\/redirect-local/,
             handler: redirect('redirect-target', false)
         },
