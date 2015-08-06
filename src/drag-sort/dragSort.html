@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>鼠标拖拽排序</title>
+    <style type="text/css">
+        #container{
+            width: 450px;
+            position: relative;
+        }
+        .icon{
+            width: 90px;
+            height: 88px;
+            float: left;
+        }
+        .icon .inner{
+            width: 80px;
+            height: 80px;
+            border: 2px white solid;
+            margin-top: 2px;
+            float: right;
+            z-index: 100;
+        }
+        .icon .inner:hover{
+            border-color: red;
+        }
+        .img1{
+            background: url(./img/1.jpg) 0 0 no-repeat;
+        }
+        .img2{
+            background: url(./img/2.jpg) 0 0 no-repeat;
+        }
+        .img3{
+            background: url(./img/3.jpg) 0 0 no-repeat;
+        }
+        .img4{
+            background: url(./img/4.jpg) 0 0 no-repeat;
+        }
+        .img5{
+            background: url(./img/5.jpg) 0 0 no-repeat;
+        }
+        .img6{
+            background: url(./img/6.jpg) 0 0 no-repeat;
+        }
+        .img7{
+            background: url(./img/7.jpg) 0 0 no-repeat;
+        }
+        .img8{
+            background: url(./img/8.jpg) 0 0 no-repeat;
+        }
+        .img9{
+            background: url(./img/9.jpg) 0 0 no-repeat;
+        }
+        .img10{
+            background: url(./img/10.jpg) 0 0 no-repeat;
+        }
+        .img11{
+            background: url(./img/11.jpg) 0 0 no-repeat;
+        }
+        .img12{
+            background: url(./img/12.jpg) 0 0 no-repeat;
+        }
+        .img13{
+            background: url(./img/13.jpg) 0 0 no-repeat;
+        }
+        .img14{
+            background: url(./img/14.jpg) 0 0 no-repeat;
+        }
+        .img15{
+            background: url(./img/15.jpg) 0 0 no-repeat;
+        }
+        .img16{
+            background: url(./img/16.jpg) 0 0 no-repeat;
+        }
+        .img17{
+            background: url(./img/17.jpg) 0 0 no-repeat;
+        }
+        .img18{
+            background: url(./img/18.jpg) 0 0 no-repeat;
+        }
+        .img19{
+            background: url(./img/19.jpg) 0 0 no-repeat;
+        }
+        .img20{
+            background: url(./img/20.jpg) 0 0 no-repeat;
+        }
+        #prefix{
+            position: absolute;
+            font-size: 1px;
+            display: none;
+        }
+        #prefix .top{
+            width: 6px;
+            height: 2px;
+            background: url(./marker_top.gif) 0 0 no-repeat;
+        }
+        #prefix .middle{
+            width: 6px;
+            height: 80px;
+            background: url(./marker_middle.gif) 0 0 repeat-y;
+        }
+        #prefix .bottom{
+            width: 6px;
+            height: 2px;
+            background: url(./marker_bottom.gif) 0 0 no-repeat;
+        }
+    </style>
+    <script type="text/javascript" src="./EventHandler.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="icon"><div class="inner img1"></div></div>
+        <div class="icon"><div class="inner img2"></div></div>
+        <div class="icon"><div class="inner img3"></div></div>
+        <div class="icon"><div class="inner img4"></div></div>
+        <div class="icon"><div class="inner img5"></div></div>
+        <div class="icon"><div class="inner img6"></div></div>
+        <div class="icon"><div class="inner img7"></div></div>
+        <div class="icon"><div class="inner img8"></div></div>
+        <div class="icon"><div class="inner img9"></div></div>
+        <div class="icon"><div class="inner img10"></div></div>
+        <div class="icon"><div class="inner img11"></div></div>
+        <div class="icon"><div class="inner img12"></div></div>
+        <div class="icon"><div class="inner img13"></div></div>
+        <div class="icon"><div class="inner img14"></div></div>
+        <div class="icon"><div class="inner img15"></div></div>
+        <div class="icon"><div class="inner img16"></div></div>
+        <div class="icon"><div class="inner img17"></div></div>
+        <div class="icon"><div class="inner img18"></div></div>
+        <div class="icon"><div class="inner img19"></div></div>
+        <div class="icon"><div class="inner img20"></div></div>
+    </div>
+    <div id="prefix">
+        <div class="top"></div>
+        <div class="middle"></div>
+        <div class="bottom"></div>
+    </div>
+    <script type="text/javascript" src="./DragSort.js"></script>
+    <script type="text/javascript">
+        DragSort.init('container');
+    </script>
+</body>
+</html>
