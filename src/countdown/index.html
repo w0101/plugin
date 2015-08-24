@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>倒计时时钟</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #canvas{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas">您的浏览器不支持canvas</canvas>
+    <script type="text/javascript" src="digit.js"></script>
+    <script type="text/javascript" src="CountDown.js"></script>
+    <script type="text/javascript">
+        var screenWidth = document.body.clientWidth;
+        var screenHeight = document.body.clientHeight;
+        /*让时钟处在屏幕左上1/5的位置，宽度是4/5*/
+        var y = Math.round(screenHeight/5);
+        var x = Math.round(screenWidth/10);
+        var radius = Math.round(screenWidth*4/5/108) - 1;
+
+        console.log(y, x);
+        var thisYear = new Date().getFullYear();
+        //要计算据元旦还剩多少时间还要再改造一下，这个最多据现在两位数小时之内
+        var lastTime = new Date(thisYear, 11, 31, 24, 0, 0, 0);
+        var countDown = new CountDown();
+        countDown.init({
+            canvas : 'canvas',
+            endTime : lastTime,
+            circleSize: radius,
+            startX : x,
+            startY : y,
+            width : screenWidth,
+            height : screenHeight
+        });
+    </script>
+</body>
+</html>
